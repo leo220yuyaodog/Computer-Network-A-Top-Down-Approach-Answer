@@ -17,15 +17,15 @@ User Datagram Protocol, Src Port: 4334, Dst Port: 161
 Simple Network Management Protocol
 ```
 
-1. 字段有：Sources Port, Destination Port, Length, Checksum  
+1. 字段有：Sources Port, Destination Port, Length, Checksum, payload
 
-2. 8字节  
+2. 8字节  Sources Port, Destination Port, Length, Checksum 分别占2字节
 
-3. 长度字段中的值是指的是 UDP头部+应用数据的字节数。  
+3. Length的值是指的是 UDP头部+payload的字节数。  
 
-4. 2<sup>16</sup> - 8 字节  
+4. UDP数据报在单个IP包中携带，因此限制为IPv4最大有效载荷为655507字节，IPv6最大有效载荷为655527字节。
 
-5. 4334
+5. 源端口可能的最大值 (2^16 – 1) = 65535.
 
 6. 十六进制 0x11，十进制 17  
 
