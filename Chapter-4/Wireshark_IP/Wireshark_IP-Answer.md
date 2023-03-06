@@ -15,17 +15,17 @@
 3. IP header有20bytes。IP datagram 的有效负载中有36bytes。  
 payload bytes =  Total Length - Header Length  
 
-4. 没有被分片。如果分片后存在ID号相同的多个IP报文，且偏移量连续变化，Flag字段表示后面还有报文。  
+4. 没有被分片。More fragments的状态是not set
+![not_set](not_set.png)
 
-5. TTL，首部检验和，Identification  
+5. TTL, Identification, sequence number
 
-6.   
-保持不变的有：  
+6. 保持不变的有：  
 Sources, Destination, Protocol, Header Length, Version  
 必须保持不变的有：  
 Sources, Destination, Protocol, Version  
 必须更改的是：  
-Header checksum, TTL, Identification  
+Header checksum, TTL, Identification, sequence number
 
 7. Identification 随数据报的发送而增长。  
 
